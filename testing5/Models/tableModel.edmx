@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="testDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_aduan_whatsapp">
+          <Key>
+            <PropertyRef Name="reportID" />
+          </Key>
+          <Property Name="reportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RefNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pengadu" Type="nvarchar" MaxLength="100" />
+          <Property Name="AduanWhatsapp" Type="nvarchar(max)" />
+          <Property Name="Jenis_Aduan" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tarikh_Aduan" Type="date" />
+          <Property Name="Tarikh_Aduan_Selesai" Type="date" />
+          <Property Name="Tindakan" Type="nvarchar(max)" />
+          <Property Name="Images" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="testDBModelStoreContainer">
+          <EntitySet Name="tbl_aduan_whatsapp" EntityType="Self.tbl_aduan_whatsapp" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="testDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="testDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_aduan_whatsapp" EntityType="testDBModel.tbl_aduan_whatsapp" />
+        </EntityContainer>
+        <EntityType Name="tbl_aduan_whatsapp">
+          <Key>
+            <PropertyRef Name="reportID" />
+          </Key>
+          <Property Name="reportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RefNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pengadu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AduanWhatsapp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Jenis_Aduan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tarikh_Aduan" Type="DateTime" Precision="0" />
+          <Property Name="Tarikh_Aduan_Selesai" Type="DateTime" Precision="0" />
+          <Property Name="Tindakan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="testDBModelStoreContainer" CdmEntityContainer="testDBEntities">
+          <EntitySetMapping Name="tbl_aduan_whatsapp">
+            <EntityTypeMapping TypeName="testDBModel.tbl_aduan_whatsapp">
+              <MappingFragment StoreEntitySet="tbl_aduan_whatsapp">
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Tindakan" ColumnName="Tindakan" />
+                <ScalarProperty Name="Tarikh_Aduan_Selesai" ColumnName="Tarikh_Aduan_Selesai" />
+                <ScalarProperty Name="Tarikh_Aduan" ColumnName="Tarikh_Aduan" />
+                <ScalarProperty Name="Jenis_Aduan" ColumnName="Jenis_Aduan" />
+                <ScalarProperty Name="AduanWhatsapp" ColumnName="AduanWhatsapp" />
+                <ScalarProperty Name="Pengadu" ColumnName="Pengadu" />
+                <ScalarProperty Name="RefNo" ColumnName="RefNo" />
+                <ScalarProperty Name="reportID" ColumnName="reportID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

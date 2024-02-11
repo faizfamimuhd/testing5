@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "ciptaAduanView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-lg-6">
+    <div class="card">
+        <div class="card-header">
+            <strong>Cipta Aduan atau Pertanyaan</strong> melalui Whatsapp
+        </div>
+        <div class="card-body card-block">
+            <form action="~/Table/AddAsync" method="post" enctype="multipart/form-data" class="form-horizontal">
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="text-input" class=" form-control-label">Pengadu</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="text" id="#Pengadu" name="Pengadu" placeholder="Pengadu dari Whatsapp" class="form-control">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="textarea-input" class=" form-control-label">Aduan yang diterima</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <textarea name="AduanWhatsapp" id="#AduanWhatsapp" rows="9" placeholder="Content..." class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="textarea-input" class=" form-control-label">Tindakan yang dilakukan</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <textarea name="Tindakan" id="#Tindakan" rows="9" placeholder="Content..." class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Select</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <select name="select" id="select" class="form-control">
+                            <option value="0">Please select</option>
+                            <option value="1">Option #1</option>
+                            <option value="2">Option #2</option>
+                            <option value="3">Option #3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="file-input" class=" form-control-label">File input</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="file" id="file-input" name="file-input" class="form-control-file">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="file-multiple-input" class=" form-control-label">Multiple File input</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="file" id="file-multiple-input" name="file-multiple-input" multiple="" class="form-control-file">
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Submit
+                    </button>
+                    <button type="reset" class="btn btn-danger btn-sm">
+                        <i class="fa fa-ban"></i> Reset
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-award" viewBox="0 0 16 16">
+    <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702z" />
+    <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z" />
+</svg>

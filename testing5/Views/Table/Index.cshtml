@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Aduan Whatsapp Tables</h1>
+    <p class="mb-4">
+      Segala aduan yang diterima melalui Whatsapp
+    </p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Aduan Whatsapps</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="whatsappTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Ref No</th>
+                            <th>Pengadu</th>
+                            <th>Aduan Dari Whatsapp</th>
+                            <th>Tindakan</th>
+                            <th>Jenis Aduan</th>
+                            <th>Tarikh Aduan</th>
+                            <th>Tarikh Aduan Selesai</th>
+
+                        </tr>
+                    </thead>
+
+            </div>
+        </div>
+                </table>
+        <script src="~/vendor/datatables/jquery.dataTables.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $("#whatsappTable").DataTable(
+                    {
+                        "ajax": {
+                            "url": "/Table/GetList",
+                            "type": "GET",
+                            "datatype": "json"
+                        },
+                        "columns": [
+                            { "data": "RefNo" },
+                            { "data": "Pengadu" },
+                            { "data": "AduanWhatsapp" },
+                            { "data": "Tindakan" },
+                            { "data": "Jenis_Aduan" },
+                            { "data": "Tarikh_Aduan" },
+                            { "data": "Tarikh_Aduan_Selesai" }
+                        ]
+
+                    });
+            });
+        </script>
