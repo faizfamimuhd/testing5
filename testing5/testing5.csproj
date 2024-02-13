@@ -148,11 +148,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ChatRoomController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JenisAduanController.cs" />
     <Compile Include="Controllers\TableController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Hubs\ChatHub.cs" />
+    <Compile Include="Models\dbo_tbl_jenis_aduan.cs">
+      <DependentUpon>tableModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tableModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2121,6 +2125,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Attachment\Helpdesk\" />
     <Folder Include="Repository\" />
+    <Folder Include="Views\JenisAduan\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

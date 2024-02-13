@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="601ec5e204784d88891227f855592e4a" Name="Diagram1">
         <EntityTypeShape EntityType="testDBModel.tbl_aduan_whatsapp" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="testDBModel.dbo_tbl_jenis_aduan" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

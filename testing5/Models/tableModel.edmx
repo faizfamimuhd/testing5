@@ -5,6 +5,13 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="testDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="dbo_tbl_jenis_aduan">
+          <Key>
+            <PropertyRef Name="IdAduan" />
+          </Key>
+          <Property Name="IdAduan" Type="int" Nullable="false" />
+          <Property Name="JenisAduan" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="tbl_aduan_whatsapp">
           <Key>
             <PropertyRef Name="reportID" />
@@ -20,6 +27,7 @@
           <Property Name="Images" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityContainer Name="testDBModelStoreContainer">
+          <EntitySet Name="dbo_tbl_jenis_aduan" EntityType="Self.dbo_tbl_jenis_aduan" Schema="dbo" Table="dbo.tbl_jenis_aduan" store:Type="Tables" />
           <EntitySet Name="tbl_aduan_whatsapp" EntityType="Self.tbl_aduan_whatsapp" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -28,6 +36,7 @@
       <Schema Namespace="testDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="testDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tbl_aduan_whatsapp" EntityType="testDBModel.tbl_aduan_whatsapp" />
+          <EntitySet Name="dbo_tbl_jenis_aduan" EntityType="testDBModel.dbo_tbl_jenis_aduan" />
         </EntityContainer>
         <EntityType Name="tbl_aduan_whatsapp">
           <Key>
@@ -42,6 +51,13 @@
           <Property Name="Tarikh_Aduan_Selesai" Type="DateTime" Precision="0" />
           <Property Name="Tindakan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Images" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="dbo_tbl_jenis_aduan">
+          <Key>
+            <PropertyRef Name="IdAduan" />
+          </Key>
+          <Property Name="IdAduan" Type="Int32" Nullable="false" />
+          <Property Name="JenisAduan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -61,6 +77,14 @@
                 <ScalarProperty Name="Pengadu" ColumnName="Pengadu" />
                 <ScalarProperty Name="RefNo" ColumnName="RefNo" />
                 <ScalarProperty Name="reportID" ColumnName="reportID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dbo_tbl_jenis_aduan">
+            <EntityTypeMapping TypeName="testDBModel.dbo_tbl_jenis_aduan">
+              <MappingFragment StoreEntitySet="dbo_tbl_jenis_aduan">
+                <ScalarProperty Name="JenisAduan" ColumnName="JenisAduan" />
+                <ScalarProperty Name="IdAduan" ColumnName="IdAduan" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

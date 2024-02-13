@@ -26,5 +26,6 @@ namespace testing5.Models
         }
     
         public virtual DbSet<tbl_aduan_whatsapp> tbl_aduan_whatsapp { get; set; }
+        public virtual DbSet<dbo_tbl_jenis_aduan> dbo_tbl_jenis_aduan { get; set; }
     }
 }

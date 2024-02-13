@@ -70,13 +70,13 @@ namespace testing5.Controllers
                     }
                     catch (Exception ex)
                     {
-                        SetMessage(false, "Error: " + ex);
+                        SetMessage(true, "Error: " + ex);
                     }
                 }
             }
             else
             {
-                SetMessage(true, "Sila lengkapkan maklumat");
+                SetMessage(false, "Sila lengkapkan maklumat");
             }
             return RedirectToAction("ciptaAduanView", "Table");
         }

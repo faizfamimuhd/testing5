@@ -9,6 +9,9 @@
 }
 body {
 }
+.removeBotIcon{
+    background:none!important;
+}
 .chatbot-toggler {
     position: fixed;
     bottom: 30px;
@@ -191,4 +194,6 @@ header h2 {
   .chatbot header span {
     display: block;
   }
+
+
 }
