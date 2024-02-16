@@ -21,6 +21,8 @@ namespace testing5.Controllers
 
         public ActionResult ciptaAduanView()
         {
+            List<SelectListItem> dropAduan = new JenisAduanController().JenisAduan();
+            ViewBag.aduanDropDown = dropAduan;
             return View();
         }
 

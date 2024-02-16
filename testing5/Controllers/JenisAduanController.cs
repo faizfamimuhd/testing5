@@ -10,7 +10,7 @@ namespace testing5.Controllers
     public class JenisAduanController : Controller
     {
         // GET: JenisAduan
-        public List<SelectListItem> JenisAduan(int Item=0)
+        public List<SelectListItem> JenisAduan(int selectedId = 0)
         {
             List<SelectListItem> list = new List<SelectListItem>();
             List<dbo_tbl_jenis_aduan> listAduan = new List<dbo_tbl_jenis_aduan>();
@@ -23,8 +23,9 @@ namespace testing5.Controllers
                     list.Add(new SelectListItem
                     {
                         Text = fe.JenisAduan,
-                        Value = fe.IdAduan.ToString()
-                    });
+                        Value = fe.IdAduan.ToString(),
+                        Selected = fe.IdAduan == selectedId ? true:false
+                    }) ;
                 }
             }
 

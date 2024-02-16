@@ -41,11 +41,17 @@
                         <label for="select" class=" form-control-label">Jenis Aduan</label>
                     </div>
                     <div class="col-12 col-md-9">
-                        <select name="select" id="Dropdownlist" class="form-control">
-                            <option value="0">Please select</option>
-                            <option value="1">Option #1</option>
-                            <option value="2">Option #2</option>
-                            <option value="3">Option #3</option>
+                       
+                        <select name="Jenis_Aduan" id="Dropdownlist" class="form-control">
+                            <option value="">Please select aduan type </option>
+                            @if ((List<SelectListItem>)ViewBag.aduanDropDown != null)
+                            {
+                                foreach (var aduan in (List<SelectListItem>)ViewBag.aduanDropDown)
+                                {
+                                    var selected = aduan.Selected ? "selected" : "";
+                                    <option value="@aduan.Value" @selected>@aduan.Text</option>
+                                }
+                            }
                         </select>
                     </div>
                 </div>
